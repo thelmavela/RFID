@@ -47,8 +47,8 @@
                     out.print(rs.getString(3)+" "+rs.getString(4));
                     conn.close();
                     }else{response.sendRedirect("error.jsp?msg=Usuario no registrado&url=index.jsp");}
-
-                %></h2>
+;
+                %></h2>  
                 
             </div>
             
