@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="userlogin" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e02e499b-449f-4fc8-b9e3-d8e08047d511">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha" class="java.lang.String">
+		<defaultValueExpression><![CDATA[2020-04-30]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT idsala as 'Numero de Sala', idlogin as 'Numero de Usuario', concat(login.nombre,' ',login.apellido) as 'Nombre Usuario', Fecha FROM registro, login where registro.idlogin=login.idusuario and fecha LIKE $P{fecha}]]>
+	</queryString>
+	<field name="Numero de Sala" class="java.lang.Integer"/>
+	<field name="Numero de Usuario" class="java.lang.Integer"/>
+	<field name="Nombre Usuario" class="java.lang.String"/>
+	<field name="Fecha" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="129" y="30" width="381" height="31" uuid="24017fa8-bc77-4124-8830-ae5433ae3ffc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE USUARIOS DEL SISTEMA DE TARJETAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="36" y="11" width="50" height="50" uuid="77405323-7d4b-4038-951f-14e7f049ef08"/>
+				<imageExpression><![CDATA["C:\\Users\\Thelma del Rosario\\Downloads\\trabajo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="19" width="228" height="20" uuid="5c97dd9d-f55e-4ef0-ac3b-8effbb7fc2a8"/>
+				<text><![CDATA[Reporte de Registros al día:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="264" y="19" width="100" height="20" uuid="cbcd1c26-5e08-495b-a22c-57669c202af2"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="143" height="20" uuid="25b8cb25-435b-402d-9b31-81cacf3ba768"/>
+				<text><![CDATA[Numero de Sala]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="0" width="143" height="20" uuid="0c4f3cd7-bf6a-4a99-b336-259aeb2bbe81"/>
+				<text><![CDATA[Numero de Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="0" width="143" height="20" uuid="a8846403-623f-46fb-bfe8-5339d974297a"/>
+				<text><![CDATA[Nombre Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="0" width="143" height="20" uuid="89579330-8d68-4a7e-a846-9e9ae8305b4f"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="143" height="20" uuid="83406904-0cd0-43d5-9bf8-20583ae1ac58"/>
+				<textFieldExpression><![CDATA[$F{Numero de Sala}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="0" width="143" height="20" uuid="a7114bf6-fed1-464b-872f-868932b063cf"/>
+				<textFieldExpression><![CDATA[$F{Numero de Usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="0" width="143" height="20" uuid="2037a742-80ea-47d1-a493-a43d48b88d71"/>
+				<textFieldExpression><![CDATA[$F{Nombre Usuario}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MM-yyyy HH:mm">
+				<reportElement x="429" y="0" width="143" height="20" uuid="6ab0df12-9380-4696-a736-dfd5acc81b6d"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

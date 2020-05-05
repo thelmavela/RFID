@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="userlogin" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e02e499b-449f-4fc8-b9e3-d8e08047d511">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numsala" class="java.lang.String">
+		<defaultValueExpression><![CDATA['0']]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT idsala, Nsala, activa, max, concat(nombre,' ',apellido) as encargado, fechacreacion,ultedicion FROM sala,login where encargado=idusuario and idsala>0;]]>
+	</queryString>
+	<field name="idsala" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nsala" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="activa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[1 activo
+2 inactiva
+default inactiva]]></fieldDescription>
+	</field>
+	<field name="max" class="java.lang.Integer">
+		<fieldDescription><![CDATA[default 10]]></fieldDescription>
+	</field>
+	<field name="encargado" class="java.lang.String">
+		<fieldDescription><![CDATA[0 admin
+1-infin-> user (admin)]]></fieldDescription>
+	</field>
+	<field name="fechacreacion" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ultedicion" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="104" y="30" width="427" height="31" uuid="24017fa8-bc77-4124-8830-ae5433ae3ffc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE LABORATORIOS DEL SISTEMA DE TARJETAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="36" y="11" width="50" height="50" uuid="77405323-7d4b-4038-951f-14e7f049ef08"/>
+				<imageExpression><![CDATA["C:\\Users\\Thelma del Rosario\\Downloads\\trabajo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="19" width="248" height="20" uuid="5c97dd9d-f55e-4ef0-ac3b-8effbb7fc2a8"/>
+				<text><![CDATA[Reporte de laboratorios registrados en el sistema al:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd MMMMM yyyy">
+				<reportElement x="296" y="19" width="100" height="20" uuid="fb7924bd-7c16-41b1-aa16-12299c27abdf"/>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="81" height="20" uuid="75048ab3-8208-4593-9678-6701e0ad1e08"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[idsala]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="0" width="81" height="20" uuid="e4531eee-b058-48a9-927c-7be4b7105efb"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nsala]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="0" width="81" height="20" uuid="f9fb367a-7fea-4cde-9e90-700831964c65"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[1 activo
+2 inactiva
+default inactiva]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="0" width="81" height="20" uuid="f30bcb9b-afb0-4571-bace-04d2d212f314"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[default 10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="0" width="81" height="20" uuid="ac18c6f3-03fe-4b8d-a22f-7deca6ce1bc9"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[0 admin
+1-infin-> user (admin)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="0" width="81" height="20" uuid="3e547d63-4bf6-4bdd-838b-6056451304ad"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[fechacreacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="0" width="81" height="20" uuid="641d60a7-0b4c-498d-8aa1-55992eaa43a2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ultedicion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="81" height="20" uuid="1581c16a-c007-4b88-8a87-776051809b27"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{idsala}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="81" height="20" uuid="3224441d-dd25-4ad8-818d-89d5eb4e21e9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Nsala}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="0" width="81" height="20" uuid="b9a94a3d-5a17-4683-b696-547a59c45943"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{activa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="0" width="81" height="20" uuid="46aee1b9-d4b8-4806-8991-efed8ed7bb86"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{max}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="0" width="81" height="20" uuid="a22feafc-4e72-49d6-9544-bdd98490c825"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{encargado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="81" height="20" uuid="24f616d7-a11e-43ca-a968-fad04ea70998"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{fechacreacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="0" width="81" height="20" uuid="5a0c2c9e-a819-45ac-9bc4-06a7def38543"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ultedicion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

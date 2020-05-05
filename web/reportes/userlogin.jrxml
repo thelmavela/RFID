@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="userlogin" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e02e499b-449f-4fc8-b9e3-d8e08047d511">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM LOGIN WHERE idusuario>0]]>
+	</queryString>
+	<field name="idUsuario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Serial" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Edad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[0-Default (normal)
+1- Admin
+2- Usuario]]></fieldDescription>
+	</field>
+	<field name="registrado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[0 no registrado
+1 registrado]]></fieldDescription>
+	</field>
+	<field name="pass" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="129" y="30" width="381" height="31" uuid="24017fa8-bc77-4124-8830-ae5433ae3ffc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE USUARIOS DEL SISTEMA DE TARJETAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="36" y="11" width="50" height="50" uuid="77405323-7d4b-4038-951f-14e7f049ef08"/>
+				<imageExpression><![CDATA["C:\\Users\\Thelma del Rosario\\Downloads\\trabajo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="19" width="228" height="20" uuid="5c97dd9d-f55e-4ef0-ac3b-8effbb7fc2a8"/>
+				<text><![CDATA[Reporte de usuarios registrados en el sistema al:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd MMMMM yyyy">
+				<reportElement x="284" y="19" width="100" height="20" uuid="fb7924bd-7c16-41b1-aa16-12299c27abdf"/>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="71" height="20" uuid="f4866b39-1f01-4e66-8243-75f9a2b51dad"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clave Usuario}]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="0" width="71" height="20" uuid="e98bb561-8047-475d-823e-62d5fa6e6d91"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tarjeta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="0" width="71" height="20" uuid="97e48ede-b670-4d6c-89ca-5b3a4253dbc1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="0" width="71" height="20" uuid="40c3aa0a-862b-4f48-9d95-392d48022569"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="0" width="71" height="20" uuid="587cfe73-8cfb-4899-b694-0b724639ef16"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="0" width="71" height="20" uuid="3f3856a4-8c24-4f92-b222-c7e3f703e603"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="0" width="71" height="20" uuid="abdff077-4648-453d-a0c1-43fef1ed2cb2"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Registrado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="60" width="572" height="1" uuid="08734b29-4dec-4867-9e27-3c325c58bbed"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="71" height="20" uuid="39cbb2f5-d2fa-4abd-a816-474c65e243fa"/>
+				<textFieldExpression><![CDATA[$F{idUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="0" width="71" height="20" uuid="45f352df-6898-43e3-9c74-97084dc3fc41"/>
+				<textFieldExpression><![CDATA[$F{Serial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="0" width="71" height="20" uuid="a069cc30-9939-421c-a283-5357b21794e8"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="0" width="83" height="20" uuid="0f10c473-b896-4378-8136-41fd12ede5a6"/>
+				<textFieldExpression><![CDATA[$F{Apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="86" height="20" uuid="e4879209-0a2b-4576-8693-0ed9a4902c59"/>
+				<textFieldExpression><![CDATA[$F{Edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="113" height="20" uuid="35fa75e6-41a9-45d9-a8e3-053ebc0a6dd3"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="0" width="75" height="20" uuid="28d9e1a8-8a5e-4533-99ec-a48e56e55014"/>
+				<textFieldExpression><![CDATA[$F{registrado}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="572" height="1" uuid="aa47f976-a109-4b66-93ae-4f101dc53696"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
