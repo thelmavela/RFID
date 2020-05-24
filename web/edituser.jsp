@@ -72,7 +72,7 @@
                     <label for="text">
                        Contraseña (dejar igual para no cambiar)
                    </label> 
-                   <input  class="form-control" name="Facultad" type="password" value="<%out.print(user1.getpass());%>">
+                   <input  class="form-control" name="facultad" type="password" value="<%out.print(user1.getpass());%>">
                    </div>
                 
                  <div class="form-group">

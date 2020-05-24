@@ -50,21 +50,24 @@
                     <label for="text">
                        Contraseña
                    </label> 
-                   <input  class="form-control" name="Facultad" type="password" value="" required> 
+                   <input  class="form-control" name="pass" type="password" required> 
                    </div>
                 <div class="form-group">
                    
                    <label for="text">
                        Tarjeta:
                    </label> 
-                   <input readonly class="form-control" id="tarjeta" name="card" type="text" value="" required>
+                   <input readonly class="form-control" id="tarjeta" name="card" type="text" value="00-00-00-02" required>
                    
                    </div>
                  <div class="form-group">
                     
                      <br>
+                     <div class="form-group">
+                     <label for="checkbox">Admin?</label>
+                     <input type="checkbox" value="1" name="admin">
                      
-                      
+                     </div>
                                    <h2 id='ready'></h2>
 
                  <h1 id="card"  class="btn btn-info" align="center">Leer Tarjeta</h1>  

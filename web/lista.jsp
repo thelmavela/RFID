@@ -23,7 +23,7 @@
         <%Conexion con= new Conexion();
           Connection conn=con.getConnection();
           Statement stm=conn.createStatement();
-          ResultSet rs=stm.executeQuery("select * from login where idusuario>0");
+          ResultSet rs=stm.executeQuery("select * from login where idusuario>0 and activo=1");
           
         %>
         <script>  
